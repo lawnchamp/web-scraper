@@ -1,7 +1,7 @@
 class TableScraper
-  def initialize(table)
-    @table = table
-    @headers = get_headers
+  def initialize(page)
+    @table = page.css('table')
+    @headers = get_headers(@table)
     @data = {}
   end
 
@@ -19,7 +19,7 @@ class TableScraper
     @data
   end
 
-  def get_headers
-    @table.search('th').map{ |header_node| header_node.text.strip }
+  def get_headers(table)
+    table.search('th').map{ |header_node| header_node.text.strip }
   end
 end

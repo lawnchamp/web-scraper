@@ -42,9 +42,7 @@ class DominionEnergyBillScraper
       raise "Error: unable to reach #{PAST_USAGE_URL}. Ensure login at #{LOGIN_URL} works with credentials given"
     end
 
-    table = page.search('table')
-
-    table_scraper = TableScraper.new(table)
+    table_scraper = TableScraper.new(page)
     table_scraper.get_data_from_columns(columns_headers)
   end
 
