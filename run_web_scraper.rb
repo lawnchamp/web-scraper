@@ -4,7 +4,6 @@ require './table_scraper'
 require 'pry-nav'
 
 require 'optparse'
-require 'yaml'
 
 # settings defaults params
 params = {
@@ -46,7 +45,7 @@ CSV.open(params[:csv_output_name], "w") do |csv_row|
   end
   csv_row << header
 
-  scraped_data.each do |date, values| 
+  scraped_data.each do |date, values|
     csv_row << [date] + values
   end
 end
@@ -64,5 +63,5 @@ puts "See #{params[:csv_output_name]} to view data"
 
 # notes
 # would have made table merger smarter by padding empty cells if there was no conflict.
-#   It was convienent that dates from two 
+#   It was convienent that dates from two
 # would let user have control of when they wanted to query data from

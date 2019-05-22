@@ -16,11 +16,11 @@ class DominionEnergyBillScraper
 
   def login(username, password, login_url = LOGIN_URL)
     login_page = @agent.get(login_url)
-    
+
     login_form = login_page.form('Login')
     login_form.field_with(:name => 'USER').value = username
     login_form.field_with(:name => 'PASSWORD').value = password
-    
+
     @agent.submit login_form
   end
 
@@ -30,7 +30,7 @@ class DominionEnergyBillScraper
 
     rename_key(taxes_data, equivalent_column_names[0], equivalent_column_names[1])
     rename_key(usage_data, equivalent_column_names[0], equivalent_column_names[1])
-    
+
     taxes_data.merge(usage_data) do |matching_key, taxes_data, usage_data|
       taxes_data + usage_data
     end

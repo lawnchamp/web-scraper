@@ -13,7 +13,7 @@ class TableScraper
       row_filtered_by_interest = entire_row_of_text.values_at(*column_indexes_to_select)
 
       index_data_with = row_filtered_by_interest.shift
-      @data[index_data_with] = row_filtered_by_interest 
+      @data[index_data_with] = row_filtered_by_interest
     end
 
     @data
