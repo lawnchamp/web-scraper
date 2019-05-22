@@ -1,7 +1,6 @@
 require 'CSV'
 require './dominion_energy_bill_scraper'
 require './table_scraper'
-require 'pry-nav'
 
 require 'optparse'
 
@@ -60,8 +59,3 @@ dates = scraped_data
 puts "Service start date: #{dates.first}"
 puts "Service end date: #{dates.last}"
 puts "See #{params[:csv_output_name]} to view data"
-
-# notes
-# would have made table merger smarter by padding empty cells if there was no conflict.
-#   It was convienent that dates from two
-# would let user have control of when they wanted to query data from

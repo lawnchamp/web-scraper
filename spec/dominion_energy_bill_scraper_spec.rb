@@ -1,5 +1,4 @@
 require_relative '../dominion_energy_bill_scraper'
-require 'pry-nav'
 
 describe DominionEnergyBillScraper do
   let(:person) {{ name: 'joe', age: '87' }}
@@ -10,7 +9,6 @@ describe DominionEnergyBillScraper do
 
   describe '#rename_key' do
     it 'removes old key name' do
-      binding.pry
       expect(person.has_key?(:name)).to be false
     end
 
