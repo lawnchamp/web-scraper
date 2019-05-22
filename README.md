@@ -3,7 +3,7 @@
 ## Usage
 `ruby run_web_scraper.rb -h` to see all arguments you can pass in
 
-`username` and `password` are the only mandatory params 
+`username` and `password` are the only mandatory params: 
 `ruby run_web_scraper.rb --username joe_shmoe --password password123`
 
 ## Running specs
